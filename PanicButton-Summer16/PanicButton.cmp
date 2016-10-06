@@ -1,0 +1,50 @@
+<aura:component description="Never press the big red button!!!"   controller="PanicButtonServerController" >
+    
+    <aura:attribute name="sound" 
+                    type="String" 
+                    default="Explosion"
+                    description="valid values=Sad Trombone|Explosion,see docs for more details"/>
+    
+    <aura:attribute name="message" 
+                    type="String" 
+                    default="D'Oh"
+                    description="Message to display while audio is playing"/>
+    
+    <aura:attribute name="soundUrl" 
+                    type="String" 
+                    default=""
+                    access="PRIVATE"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <ltng:require styles="{!$Resource.SLDS +  '/assets/styles/salesforce-lightning-design-system-ltng.css'}" />
+    
+    <div class="slds">
+       <div class="centered">
+            <ui:button label="Play" 
+                       labelClass="assistiveText" 
+                       press="{!c.handleClick}" 
+                       class="panicbutton" />
+            
+        </div>
+        
+        <div class="centered slds-form-element soundSelector">
+            <ui:inputSelect label="Select Sound"
+                            labelClass="assistiveText"
+                            class="slds-select"
+                            aura:id="soundSelector"
+                            change="{!c.handleChange}"/>
+        </div>
+        
+        
+        <audio 
+               aura:id="audioclip" 
+               autoplay="autoplay"
+               onended="{! c.onPlaybackEnded }"></audio>
+        
+        <div aura:id="message" class="slds-hide message">
+            {! v.message }
+        </div>
+    </div>
+    
+</aura:component>

@@ -1,0 +1,19 @@
+<aura:component >
+   
+   <aura:method name="setActiveCard" 
+                action="{!c.doSetActiveCard}" 
+                access="global" />
+   
+   <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+ 
+    
+   <aura:attribute name="activeCard" 
+                   type="String" 
+                   default="0" access="global" />
+
+   <div class="flip-container">
+   	<div class="flipper">
+     	{!v.body}
+   	</div>
+   </div>
+</aura:component>

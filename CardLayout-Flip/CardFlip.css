@@ -1,0 +1,36 @@
+// see https://davidwalsh.name/demo/css-flip.php
+
+.THIS.flip-container {
+	perspective: 1000px;
+}
+
+.THIS.flip-container, .THIS .card {
+	width: 320px;
+	height: 400px;
+}
+
+.THIS .flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+.THIS .card {
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+    transition: 0.6s;
+	transform-style: preserve-3d;
+    transform: rotateY(0deg);
+}
+
+.THIS .card--on {
+	z-index: 2 !important;
+	/* for firefox 31 */
+	transform: rotateY(0deg) !important;
+}
+
+.THIS .card {
+    transform: rotateY(180deg);
+}

@@ -1,0 +1,18 @@
+<!-- https://figleafsoftware1-dev-ed.my.salesforce.com -->
+<aura:component >
+   
+   <aura:method name="setActiveCard" 
+                action="{!c.doSetActiveCard}" 
+                access="global" />
+   
+   <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+ 
+    
+   <aura:attribute name="activeCard" 
+                   type="String" 
+                   default="0" access="global" />
+	
+   <div class="cardContainer">
+     {!v.body}
+   </div>
+</aura:component>

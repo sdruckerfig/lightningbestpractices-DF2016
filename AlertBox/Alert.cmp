@@ -1,0 +1,11 @@
+<aura:component >
+	<aura:dependency resource="markup://c:modalDialog" />
+
+    <aura:method name="alert" action="{!c.doShow}">
+    	<aura:attribute name="title" type="String"/>
+    	<aura:attribute name="message" type="String" />
+	</aura:method>
+
+    <div aura:id="alertbox" />
+    
+</aura:component>
