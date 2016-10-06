@@ -1,0 +1,13 @@
+.THIS .autobot {
+    background-color: black;
+    background-image: url(/resource/autobot);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.THIS .decepticon {
+    background-color: black;
+    background-image: url(/resource/Decepticon);
+    background-position: center center;
+    background-repeat: no-repeat;
+}

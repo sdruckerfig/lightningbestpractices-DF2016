@@ -1,0 +1,25 @@
+<aura:component >
+   
+  <aura:registerEvent 
+ 	name="cardchange"  
+    type="c:cardchange"/>
+
+  <aura:handler 
+     name="cardchange" 
+     event="c:cardchange" 
+     action="{!c.doSetActiveCard}"/>
+
+   
+   <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+ 
+    
+   <aura:attribute name="activeCard" 
+                   type="String" 
+                   default="0" access="global" />
+
+   <div class="flip-container">
+   	<div class="flipper">
+     	{!v.body}
+   	</div>
+   </div>
+</aura:component>

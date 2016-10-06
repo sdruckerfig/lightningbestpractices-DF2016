@@ -1,0 +1,29 @@
+.THIS {
+    height: 100%;
+}
+
+.THIS.cardContainer {
+  position: relative;
+  display: flex;
+  flex: 1 0 auto;
+  height: 100%;
+}
+
+.THIS .card {
+  transition: 0.2s opacity linear; 
+  visibility: visible;
+  overflow: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute !important;
+  opacity: 0;          
+  visibility: hidden;
+}
+
+.THIS .card--on {
+  opacity: 1;
+  
+  visibility: visible;
+}
